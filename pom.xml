@@ -49,6 +49,7 @@
                     <excludes>
                         <exclude>**/Praktikum.class</exclude>
                         <exclude>**/Database.class</exclude>
+                        <exclude>**/Constants.class</exclude>
                     </excludes>
                 </configuration>
                 <executions>

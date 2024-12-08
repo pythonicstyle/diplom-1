@@ -1,5 +1,6 @@
 package praktikum;
 
+import static constants.Constants.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
@@ -12,7 +13,7 @@ public class BunTest {
 
     @Before
     public void setUp() {
-        bun = new Bun("Буханка", 50);
+        bun = new Bun(BUN_NAME, BUN_PRICE);
     }
 
     @Test
@@ -23,12 +24,12 @@ public class BunTest {
     @Test
     public void testGetName() {
         String name = bun.getName();
-        assertEquals("Буханка", name);
+        assertEquals(BUN_NAME, name);
     }
 
     @Test
     public void testGetPrice() {
         float price = bun.getPrice();
-        assertEquals(50, price, 0.001);
+        assertEquals(BUN_PRICE, price, DELTA);
     }
 }

@@ -1,7 +1,8 @@
 package praktikum;
 
+import static constants.Constants.DELTA;
 import static org.junit.Assert.assertEquals;
-import static praktikum.IngredientType.SAUCE;
+import static praktikum.IngredientType.*;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -26,6 +27,7 @@ public class IngredientParametrizedTest {
     public static Object[][] data() {
         return new Object[][] {
             { SAUCE, "Соус", 50},
+            { FILLING, "Начинка", 100},
             };
     }
 
@@ -44,6 +46,6 @@ public class IngredientParametrizedTest {
     @Test
     public void testGetPrice() {
         Ingredient ingredient = new Ingredient(type, name, price);
-        assertEquals(price, ingredient.getPrice(), 0.01);
+        assertEquals(price, ingredient.getPrice(), DELTA);
     }
 }

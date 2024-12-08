@@ -1,13 +1,12 @@
 package praktikum;
 
+import static constants.Constants.DELTA;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.mockito.Mockito.when;
-import static praktikum.IngredientType.FILLING;
-import static praktikum.IngredientType.SAUCE;
+import static praktikum.IngredientType.*;
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -98,7 +97,7 @@ public class BurgerTest {
         for (Ingredient ingredient : burger.ingredients) {
             expectedPrice += ingredient.getPrice();
         }
-        assertEquals(expectedPrice, burger.getPrice(), 0.01f);
+        assertEquals(expectedPrice, burger.getPrice(), DELTA);
         System.out.println(expectedPrice);
     }
 
@@ -118,14 +117,5 @@ public class BurgerTest {
         );
         assertEquals(expectedReceipt, burger.getReceipt());
         System.out.println(expectedReceipt);
-    }
-
-    @After
-    public void tearDown() {
-        burger = null;
-        bun = null;
-        ingredient1 = null;
-        ingredient2 = null;
-        ingredient3 = null;
     }
 }
